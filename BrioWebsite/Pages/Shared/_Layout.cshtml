@@ -3,44 +3,95 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BrioWebsite</title>
+    <title>@ViewData["Title"] - BrioWellnessWebsite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BrioWebsite.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BrioWellnessWebsite.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        @* have the white space in between title and nav items be what changes with scale *@
+        <nav class="navbar navbar-expand-sm">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">BrioWebsite</a>
+                <img id="img_logo" alt="Logo" src="~/Images/Brio-Flower.png" />
+                
+                <a class="brio-nav-title" asp-area="" asp-page="/Index">Brio Wellness Center</a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        <li class="nav-item brio-nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">HOME</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        <li class="nav-item brio-nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/About">ABOUT</a>
+                        </li>
+                        <li class="nav-item brio-nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Services">SERVICES</a>
+                        </li>
+                        <li class="nav-item brio-nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Packages">PACKAGES</a>
+                        </li>
+                        <li class="nav-item brio-nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Request">REQUEST APPOINTMENT</a>
+                        </li>
+                        <li class="nav-item brio-nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Events">CLASSES AND EVENTS</a>
+                        </li>
+                        <li class="nav-item brio-nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">PRIVACY</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="body-div">
+           @RenderBody()
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - BrioWebsite - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="footer">
+        <div class="vertical-section">
+            <h3 class="section-content">
+                ADDRESS
+            </h3>
+            <div class="section-content">
+                805 N Pollock St. (HWY-301) <br>
+                Selma, NC 27576 <br>
+                [Private parking only - no street parking] <br>
+                <a href="https://maps.app.goo.gl/DcBtW3UYBdPoDWiX9" target="_blank">Google Maps</a>
+            </div>
+        </div>
+
+        <div class="vertical-section">
+            <h3 class="section-content">
+                HOURS
+            </h3>
+            <div class="section-content">
+                Monday - Thursday: <br>
+                10:00 am - 6:00 pm <br>
+                Friday: <br>
+                10:00 am - 1:00 pm <br>
+                Saturday & Sunday: <br>
+                Closed
+            </div>
+        </div>
+
+        <div class="vertical-section">
+            <h3 class="section-content">
+                CONTACT US
+            </h3>
+            <div class="section-content">
+                Phone: (919) 351-5787 <br>
+                Fax: (919) 842-5649 <br>
+                Email: <a href="mailto:info@briowellness.com">info@briowellness.com</a>
+            </div>
         </div>
     </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

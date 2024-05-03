@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BrioWebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+399abb8809a10fa12b44e0dfe3ff50881d759f3d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+174cded120e43929010f2cab98154de8395d656f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BrioWebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BrioWebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

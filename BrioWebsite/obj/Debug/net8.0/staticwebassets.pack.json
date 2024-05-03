@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\BrioWebsite.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\kevin\\Documents\\GitHub\\brio-website\\BrioWebsite\\wwwroot\\Images\\Brio-Flower.png",
+      "PackagePath": "staticwebassets\\Images\\Brio-Flower.png"
+    },
+    {
+      "Id": "C:\\Users\\kevin\\Documents\\GitHub\\brio-website\\BrioWebsite\\wwwroot\\Images\\Home\\Home.png",
+      "PackagePath": "staticwebassets\\Images\\Home\\Home.png"
+    },
+    {
       "Id": "C:\\Users\\kevin\\Documents\\GitHub\\brio-website\\BrioWebsite\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

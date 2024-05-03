@@ -3,8 +3,105 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<style>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    .body-div{
+        /*
+        background-image: url('Images/Home/Home.png'); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+        background-size: cover; /* Cover the entire container */
+        background-position: center; /* Center the background image */
+        */
+    }
+    .body-container {
+        display: flex;
+        flex-direction: row; /* Change to row to place sections side by side */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: calc(100vh - 75px); /* Subtract header height from viewport height */
+        width: 100%; /* Adjust as needed */
+        position: relative; /* Enable absolute positioning for the footer */
+        padding: 150px;
+        background-color:darkolivegreen;
+
+    }
+
+
+    /* Style for the sections */
+    .section {
+        flex: 1; /* Each section takes up equal space */
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    /* Style for the logo */
+    .logo {
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    /* Style for the large text */
+    .large-text {
+        font-size: 80px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color:white;
+    }
+
+    /* Style for the horizontal line */
+    .horizontal-line {
+        border-top: 2px solid #333;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    /* Style for the smaller text */
+    .small-text {
+        font-size: 30px;
+        color: white;
+    }
+
+    /* Style for the text box */
+    .text-box {
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        border-radius: 10px;
+        font-size: 28px;
+        color: white;
+    }
+
+    /* Style for the button */
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f3ddcb;
+        color: #19603b;
+        font-weight:bold;
+        border: none;
+        border-radius: 50px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+</style>
+<div class="body-container">
+
+    <!-- Section 1 -->
+    <div class="section">
+        <!-- Replace "path_to_your_logo_image" with the actual path to your logo image -->
+        <img src="Images/Brio-Flower.png" alt="Brio Wellness Center Logo" class="logo">
+        <div class="large-text">Brio<br /> Wellness<br />Center</div>
+        <hr class="horizontal-line">
+        <div class="small-text">Chiropractic<br />& nutrition</div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+        <div class="text-box">
+            Your health—spiritual, emotional, physical, and mental—is directly proportional to your happiness. Our doctors provide you with the tools you need to radically transform your health, freeing you to live the abundant life you deserve!
+        </div>
+        <button class="button">Our Services &rarr;</button>
+    </div>
+
 </div>
