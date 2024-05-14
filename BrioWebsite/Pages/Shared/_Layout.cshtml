@@ -13,15 +13,15 @@
         @* have the white space in between title and nav items be what changes with scale *@
         <nav class="navbar navbar-expand-sm">
             <div class="container">
-                <img id="img_logo" alt="Logo" src="~/Images/Brio-Flower.png" />
-                
-                <a class="brio-nav-title" asp-area="" asp-page="/Index">Brio Wellness Center</a>
-
+                <div class="navbar-title">
+                    <img id="img_logo" alt="Logo" src="~/Images/Brio-Flower.png" />
+                    <a class="brio-nav-title" asp-area="" asp-page="/Index">Brio Wellness Center</a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="">
+                <div class="navbar-items">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item brio-nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">HOME</a>

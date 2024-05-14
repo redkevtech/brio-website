@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kevin\\.nuget\\packages\\": {}
+    "C:\\Users\\P00099103\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kevin\\Documents\\GitHub\\brio-website\\BrioWebsite\\BrioWebsite.csproj",
+      "projectUniqueName": "C:\\brio-website\\BrioWebsite\\BrioWebsite.csproj",
       "projectName": "BrioWebsite",
-      "projectPath": "C:\\Users\\kevin\\Documents\\GitHub\\brio-website\\BrioWebsite\\BrioWebsite.csproj",
-      "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kevin\\Documents\\GitHub\\brio-website\\BrioWebsite\\obj\\",
+      "projectPath": "C:\\brio-website\\BrioWebsite\\BrioWebsite.csproj",
+      "packagesPath": "C:\\Users\\P00099103\\.nuget\\packages\\",
+      "outputPath": "C:\\brio-website\\BrioWebsite\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\P00099103\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,11 +40,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -69,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

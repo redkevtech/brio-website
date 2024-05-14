@@ -1,3 +1,15 @@
+
+
+@font-face {
+    font-family: 'Roca One';
+    src: url(../Fonts/roca-one-regular.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../Fonts/Montserrat-Regular.ttf);
+}
+
 html {
     font-size: 14px;
 }
@@ -21,32 +33,53 @@ html {
     padding: 0;
 }
 
+.navbar-title {
+    display: flex;
+    align-items: center;
+}
+
 #img_logo {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
-    vertical-align: bottom;
+}
+
+.navbar {
+    width: 100%;
+    margin: 0px;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.container{
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+}
+
+.navbar-items {
+    float: right;
 }
 
 .brio-nav-item {
-    font-family: 'Times New Roman', Times, serif;
-    margin-right: 10px;
-    vertical-align: bottom;
+    font-family: Montserrat;
+    color: red;
+    margin-right: 0px;
     height: 30px;
-
+    float: right;
 }
 
 .brio-nav-item > a {
-    vertical-align: bottom;
+    float: left;
 }
 
 .brio-nav-title {
-    font-family: 'Times New Roman', Times, serif;
-    margin-right: 50px;
+    font-family: 'Roca One';
+    margin-right: 0px;
     font-size: 36px;
     vertical-align: bottom;
     color: #301607;
     text-decoration: none;
+    float: left;
 }
 
 .brio-nav-title:hover{
