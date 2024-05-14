@@ -1,4 +1,9 @@
 
-/BrioWebsite/.vs
-/BrioWebsite/obj
-/BrioWebsite/bin
+
+*.suo
+*.user
+_BrioWebsite.*
+bin
+obj
+packages
+.vs
