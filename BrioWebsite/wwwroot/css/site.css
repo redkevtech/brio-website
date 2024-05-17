@@ -38,7 +38,7 @@ html {
 
 .navbar-title > a {
     font-family: 'Roca One';
-    font-size: max(min(2vw, 36px),24px);
+    font-size: max(min(2vw, 36px),22px);
     text-decoration: none;
     color: #301607;
     line-height: 32px;
@@ -83,7 +83,7 @@ html {
 }
 
 #navbar-nav a {
-    font-size: max(min(1vw, 18px),13px);
+    font-size: max(min(1vw, 18px),12px);
     color: black;
     padding: .3vw;
 }
