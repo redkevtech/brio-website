@@ -5,55 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BrioWellnessWebsite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BrioWellnessWebsite.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        @* have the white space in between title and nav items be what changes with scale *@
-        <nav class="navbar navbar-expand-sm">
-            <div class="container">
-                <div class="navbar-title">
-                    <img id="img_logo" alt="Logo" src="~/Images/Brio-Flower.png" />
-                    <a class="brio-nav-title" asp-area="" asp-page="/Index">Brio Wellness Center</a>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-items">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item brio-nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">HOME</a>
-                        </li>
-                        <li class="nav-item brio-nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/About">ABOUT</a>
-                        </li>
-                        <li class="nav-item brio-nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Services">SERVICES</a>
-                        </li>
-                        <li class="nav-item brio-nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Packages">PACKAGES</a>
-                        </li>
-                        <li class="nav-item brio-nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Request">REQUEST APPOINTMENT</a>
-                        </li>
-                        <li class="nav-item brio-nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Events">CLASSES AND EVENTS</a>
-                        </li>
-                        <li class="nav-item brio-nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">PRIVACY</a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Your HTML code -->
+    <!-- Your existing body content -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+     <header>
+        <!-- This navbar will be displayed on large screens and up -->
+        <nav class="d-none d-lg-flex" id="navbarLargeScreen">
+            <div class="navbar-title">
+                <img alt="Logo" src="~/Images/Brio-Flower.png" />
+                <a asp-area="" asp-page="/Index">Brio Wellness Center</a>
+            </div>
+            <div id="navbar-nav" class="ml-auto"> 
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Index">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/About">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Services">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Packages">PACKAGES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Request">REQUEST APPOINTMENT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Events">CLASSES AND EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Privacy">PRIVACY</a>
+                    </li>
+                </ul>
             </div>
         </nav>
+
+        <!-- This navbar will be displayed on screens smaller than large -->
+        <nav class="navbar navbar-light bg-light d-lg-none" id="navbarSmallScreen">
+            <div class="navbar-title">
+                <img alt="Logo" src="~/Images/Brio-Flower.png" />
+                <a asp-area="" asp-page="/Index">Brio Wellness Center</a>
+            </div>
+            <button class="open" id="sideMenuOpenButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            </button>
+        </nav>
     </header>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+        <button class="close" id="SideMenuCloseButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        </button>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Index">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/About">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Services">SERVICES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Packages">PACKAGES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Request">REQUEST APPOINTMENT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Events">CLASSES AND EVENTS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">PRIVACY</a>
+            </li>
+        </ul>
+    </div>
     <div class="body-div">
            @RenderBody()
     </div>
 
-    <footer class="footer">
+    <footer class="footer smaller-text">
         <div class="vertical-section">
             <h3 class="section-content">
                 ADDRESS
