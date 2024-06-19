@@ -5,7 +5,12 @@
 }
 <style>
     .body-div {
-        background: url('Images/Home/home_page_background.png') center / cover;
+        background-image: url('Images/IMG_5654.jpg');
+    background-repeat: no-repeat;
+
+    background-position: center center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(255,165,50,.2);
     }
 
     .body-container {
@@ -13,10 +18,10 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        min-height: calc(100vh - 60px);
+        min-height: 100vh;
         width: 100%;
         position: relative;
-        padding: 0 20%;
+        padding: 0;
     }
 
     .section,
@@ -46,11 +51,6 @@
         font-size: 50px;
     }
 
-
-    .smaller-text {
-        font-size: 28px;
-    }
-
     .text-box {
         width: 80%;
         margin: 0;
@@ -60,34 +60,21 @@
 
     .horizontal-line {
         border-top: 5px solid #ffffff;
-        width: 75%;
+        width: 1000px;
         margin: 0;
         opacity: 1;
     }
 
     .button {
         display: inline-block;
-        padding: 10px 20px;
-        background-color: #f3ddcb;
-        color: #19603b;
+        padding: 5px 15px;
+        background-color: transparent;
+        color: white;
         font-weight: bold;
-        border: none;
-        border-radius: 50px;
-        font-size: 18px;
+        border: solid 5px;
+        font-size: 36px;
         cursor: pointer;
-    }
-
-    .grid-container {
-        display: grid;
-        gap: 0px;
-        grid-template-columns: auto auto;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .section{
-        display: flex;
-        width: 100%;
+        margin-top: 20px;
     }
     
     .grid-item{
@@ -104,94 +91,91 @@
     ul{
         padding: 0;
         margin:0;
+        padding: 10px;
     }
 
     @@media (max-width: 1700px) {
-
-        .body-container {
-            padding: 0 10%;
-        }
-
-    }
-    @@media (max-width: 1200px) {
         .large-text {
-            font-size: 100px;
+            font-size: 80px;
+        }
+        .horizontal-line {
+            width: 700px;
         }
 
         .small-text {
             font-size: 40px;
         }
+        .button {
+            font-size: 28px;
+        }
+    }
 
-        .smaller-text {
-            font-size: 24px;
+    @@media (max-width: 1200px) {
+        .large-text {
+            font-size: 75px;
+        }
+        .horizontal-line {
+            width: 600px;
         }
 
-        .logo {
-            width: 90px;
+        .small-text {
+            font-size: 36px;
+        }
+        .button {
+            font-size: 24px;
         }
     }
 
     @@media (max-width: 992px) {
         .large-text {
-            font-size: 80px;
+            font-size: 70px;
+        }
+        .horizontal-line {
+            width: 500px;
+        }
+
+        .body-container {
+            min-height: calc(100vh - 60px);
         }
 
         .small-text {
-            font-size: 30px;
-            margin-bottom: 30px;
+            font-size: 32px;
         }
-
-        .smaller-text {
+        .button {
             font-size: 20px;
-        }
-
-        .logo {
-            width: 70px;
-        }
-
-        .grid-container {
-            grid-template-columns: auto;
-        }
-
-        .grid-item{
-            width:100%;
-        }
-
-        .horizontal-line {
-            width: 50%;
         }
 
     }
 
     @@media (max-width: 768px) {
         .large-text {
-            font-size: 70px;
+            font-size: 54px;
+        }
+        .horizontal-line {
+            width: 400px;
         }
 
         .small-text {
-            font-size: 25px;
+            font-size: 28px;
         }
-
-        .smaller-text {
-            font-size: 18px;
-        }
-
-        .horizontal-line {
-            width: 75%;
+        .button {
+            font-size: 16px;
         }
     }
 
 
     @@media (max-width: 576px) {
         .large-text {
-            font-size: 60px;
+            font-size: 45px;
+        }
+        .horizontal-line {
+            width: 300px;
         }
 
         .small-text {
-            font-size: 25px;
+            font-size: 24px;
         }
-
-        .smaller-text {
+        .button {
             font-size: 14px;
         }
     }
@@ -199,31 +183,18 @@
 </style>
 
 <div class="body-container">
-    <div class="section">
-        <div class="grid-container">
-            <div class="grid-item">
-                <ul>
-                    <li><img src="Images/Brio-Flower.png" alt="Brio Wellness Center Logo" class="logo"></li>
-                    <li>
-                        <p class="large-text">Brio<br /> Wellness<br />Center</p>
-                    </li>
-                    <li><hr class="horizontal-line"></li>
-                    <li>
-                        <div class="small-text">Chiropractic<br />& Nutrition</div>
-                    </li>
-                </ul>
-            </div>
             <div class="grid-item">
                 <ul>
                     <li>
-                        <p class="text-box smaller-text">Your health &ndash; spiritual, emotional, physical, and mental &ndash; is directly proportional to your happiness. Our doctors provide you with the tools you need to radically transform your health, freeing you to live the abundant life you deserve!</p>
+                        <p class="large-text">Live the life you<br/>DESIRE and DESERVE</p>
                     </li>
                     <li>
-                        <br />
+                        <hr class="horizontal-line">
                     </li>
-                    <li><button class="button smaller-text ">OUR SERVICES &rarr;</button></li>
+                    <li>
+                        <div class="small-text">Chiropractic & Nutrition</div>
+                    </li>
+                    <li><button class="button ">Book Now</button></li>
                 </ul>
-            </div>
-        </div>
     </div>
 </div>
