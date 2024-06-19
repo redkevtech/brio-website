@@ -4,31 +4,13 @@
     ViewData["Title"] = "Home page";
 }
 <style>
-    .body-div {
+    #mainPage {
         background-image: url('Images/IMG_5654.jpg');
-    background-repeat: no-repeat;
+        background-repeat: no-repeat;
 
-    background-position: center center;
-    background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(255,165,50,.2);
-    }
-
-    .body-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        min-height: 100vh;
-        width: 100%;
-        position: relative;
-        padding: 0;
-    }
-
-    .section,
-    .columnA,
-    .columnB {
-        flex: 1;
-        padding: 0;
+        background-position: center center;
+        background-size: cover;
+        box-shadow: inset 0 0 0 1000px rgba(255,165,50,.2);
     }
 
     .logo {
@@ -40,7 +22,6 @@
     .small-text {
         font-family: 'Roca One';
         line-height: 1;
-        color: white;
     }
 
     .large-text {
@@ -51,10 +32,17 @@
         font-size: 50px;
     }
 
+    .green{
+        color:#16603b;
+    }
+
+    #mainPage > *{
+        color: white;
+    }
+
     .text-box {
         width: 80%;
         margin: 0;
-        color: white;
         font-family: Montserrat;
     }
 
@@ -65,126 +53,222 @@
         opacity: 1;
     }
 
-    .button {
+    .white-button {
         display: inline-block;
-        padding: 5px 15px;
+        padding: 10px 25px;
         background-color: transparent;
-        color: white;
         font-weight: bold;
         border: solid 5px;
         font-size: 36px;
         cursor: pointer;
-        margin-top: 20px;
+        margin-top: 50px;
+
+        color: white;
+        border-color: white;
+
+    }
+    .green-button {
+        display: inline-block;
+        padding: 5px 15px;
+        background-color: transparent;
+        border: solid 3px;
+        cursor: pointer;
+
+        color:#16603b;
+        border-color:#16603b;
     }
     
-    .grid-item{
-        align-items: center;
-        justify-content: center;
-    }
 
-    li{
+    .grid{
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 100%;
+        padding: 0 7%;
+        height: calc(100vh - 60px);
+    }
+    .grid-item {
+        height: 100%;
         justify-content: center;
         align-content: center;
+        padding: 0 2vw;
+    }
+    .grid-item > img{
+        height:min(75vh,30vw*2);
+        width: min(auto,25vw);
+        justify-content: left
+        align-content: center;
+    }
+
+    ul.mainPage > li{
+        justify-content: center;
+        align-content: center;
+        display: flex;
+    }
+
+    li {
         display: flex;
     }
 
     ul{
         padding: 0;
         margin:0;
-        padding: 10px;
-    }
-
-    @@media (max-width: 1700px) {
-        .large-text {
-            font-size: 80px;
-        }
-        .horizontal-line {
-            width: 700px;
-        }
-
-        .small-text {
-            font-size: 40px;
-        }
-        .button {
-            font-size: 28px;
-        }
-    }
-
-    @@media (max-width: 1200px) {
-        .large-text {
-            font-size: 75px;
-        }
-        .horizontal-line {
-            width: 600px;
-        }
-
-        .small-text {
-            font-size: 36px;
-        }
-        .button {
-            font-size: 24px;
-        }
-    }
-
-    @@media (max-width: 992px) {
-        .large-text {
-            font-size: 70px;
-        }
-        .horizontal-line {
-            width: 500px;
-        }
-
-        .body-container {
-            min-height: calc(100vh - 60px);
-        }
-
-        .small-text {
-            font-size: 32px;
-        }
-        .button {
-            font-size: 20px;
-        }
-
-    }
-
-    @@media (max-width: 768px) {
-        .large-text {
-            font-size: 54px;
-        }
-        .horizontal-line {
-            width: 400px;
-        }
-
-        .small-text {
-            font-size: 28px;
-        }
-        .button {
-            font-size: 16px;
-        }
+        padding: 0 10px;
     }
 
 
-    @@media (max-width: 576px) {
-        .large-text {
-            font-size: 45px;
-        }
-        .horizontal-line {
-            width: 300px;
-        }
+.smaller-text {
+    font-size: 30px;
+    font-family: montserrat;
+}
 
-        .small-text {
-            font-size: 24px;
-        }
-        .button {
-            font-size: 14px;
-        }
+@@media (max-width: 2000px) {
+    .grid {
+        padding: 0 5%;
     }
 
+    .smaller-text {
+        font-size: 26px;
+    }
+}
+
+@@media (max-width: 1700px) {
+    .large-text {
+        font-size: 80px;
+    }
+
+    .horizontal-line {
+        width: 700px;
+    }
+
+    .small-text {
+        font-size: 40px;
+    }
+
+    .grid {
+        padding: 0 5%;
+    }
+
+    .smaller-text {
+        font-size: 22px;
+    }
+}
+
+@@media (max-width: 1200px) {
+    .large-text {
+        font-size: 75px;
+    }
+
+    .horizontal-line {
+        width: 600px;
+    }
+
+    .small-text {
+        font-size: 36px;
+    }
+
+    .grid {
+        padding: 0 3%;
+    }
+
+    .smaller-text {
+        font-size: 20px;
+    }
+}
+
+@@media (max-width: 992px) {
+    .large-text {
+        font-size: 70px;
+    }
+
+    .horizontal-line {
+        width: 500px;
+    }
+
+    .body-container {
+        min-height: calc(100vh - 60px);
+    }
+
+    #mainPage {
+        min-height: 100vh
+    }
+
+    .small-text {
+        font-size: 32px;
+    }
+
+    .grid {
+        grid-template-columns: auto;
+    }
+
+    .grid-item > img {
+        max-height: 40vh;
+    }
+
+    .smaller-text {
+        font-size: 18px;
+    }
+}
+
+@@media (max-width: 768px) {
+    .large-text {
+        font-size: 54px;
+    }
+
+    .horizontal-line {
+        width: 400px;
+    }
+
+    .small-text {
+        font-size: 28px;
+    }
+
+    .smaller-text {
+        font-size: 16px;
+    }
+}
+
+
+@@media (max-width: 576px) {
+    .large-text {
+        font-size: 45px;
+    }
+
+    .horizontal-line {
+        width: 300px;
+    }
+
+    .small-text {
+        font-size: 24px;
+    }
+
+    .smaller-text {
+        font-size: 14px;
+    }
+}
+
+
+@@media (max-height: 790px) {
+    .grid-item > img {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        padding: 0;
+    }
+
+    .grid {
+        display: flex;
+        padding: 20px;
+    }
+
+    .grid-item {
+        height: 0;
+    }
+}
 </style>
 
-<div class="body-container">
-            <div class="grid-item">
-                <ul>
+<div id="mainPage" class="body-container">
+            <div>
+                <ul class = "mainPage">
                     <li>
                         <p class="large-text">Live the life you<br/>DESIRE and DESERVE</p>
                     </li>
@@ -194,7 +278,30 @@
                     <li>
                         <div class="small-text">Chiropractic & Nutrition</div>
                     </li>
-                    <li><button class="button ">Book Now</button></li>
+                    <li><button class="white-button "><div class="smaller-text">Book Now</div></button></li>
                 </ul>
+    </div>
+</div>
+<div class="body-container">
+    <div class = "grid">
+        <div class ="grid-item">
+            <img class="image-oval" alt="Pediatric.jpg" src="~/Images/Pediatric_updated.jpg" />
+        </div>
+        <div class="grid-item">
+            <ul>
+                <li>
+                    <h1 class = "small-text green" style="text-align: left; margin-bottom: 20px;">Discover a path to wellness that is uniquely yours.</h1>
+                </li>
+                <li>
+                    <p class = "smaller-text" style="text-align: left">Brio Wellness Center is a <b>woman-owned</b> clinic dedicated to offering top-tier chiropractic and wellness-focused services for individuals committed to their personal growth. Our focus lies in a holistic approach to health, blending natural remedies seamlessly into daily life.</p>
+                </li>
+                <li>
+                    <p class = "smaller-text" style="text-align: left">What distinguishes us is our belief that chiropractic care transcends mere spinal treatment—it's about nurturing the complete individual. Your mindset, enriched. Your physical well-being, enhanced. Because true health comes from embracing your utmost potential, ensuring you live life to its fullest capacity.</p>
+                </li>
+                <li>
+                    <button class="green-button"><div class="smaller-text">Learn More</div></button>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
