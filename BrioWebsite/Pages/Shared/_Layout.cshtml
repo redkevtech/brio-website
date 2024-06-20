@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BrioWellnessWebsite.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -68,40 +69,33 @@
         @RenderBody()
     </div>
 
-    <footer id="footer" class="smaller-text">
-        <div class="vertical-section">
-            <h2 class="section-content">ADDRESS</h2>
-            <h3>Johnston County Clinic</h3>
-            <div class="section-content">
-                <a href="https://maps.app.goo.gl/DcBtW3UYBdPoDWiX9" target="_blank">
-                    805 N Pollock St. (HWY-301) <br>
-                    Selma, NC 27576 <br>
-                </a>
-                [Private parking only - no street parking] <br>
+    <footer id="footer">
+        <div class="footer-section">
+            <div class="footer-title">ADDRESS</div>
+            <div class="footer-content">Selma Office<br>
+                <a href="https://maps.app.goo.gl/zon2EcUHLjK7kgdr8" target="_blank">805 N Pollock St. Selma, NC 27576</a>
             </div>
-            <h3>Wake County Clinic</h3>
-        </div>
-
-        <div class="vertical-section">
-            <h3 class="section-content">HOURS</h3>
-            <div class="section-content">
-                Monday - Thursday: <br>
-                10:00 am - 6:00 pm <br>
-                Friday: <br>
-                10:00 am - 1:00 pm <br>
-                Saturday & Sunday: <br>
-                Closed
+            <div class="footer-content">Raleigh Office<br>
+                <a href="https://maps.app.goo.gl/caNWLhK5XW4RzRye8" target="_blank">184 Wind Chime Ct. Suite 202 Raleigh, NC 27615</a><br>
+                <div>[Appointment Only]</div>
             </div>
         </div>
 
-        <div class="vertical-section">
-            <h3 class="section-content">CONTACT US</h3>
-            <div class="section-content">
-                Phone: (919) 351-5787 <br>
-                Fax: (919) 842-5649 <br>
-                Email: <a href="mailto:info@briowellness.com">info@briowellness.com</a>
-            </div>
+        <div class="footer-section">
+            <div class="footer-title">HOURS</div>
+            <div class="footer-content">Monday - Thursday:<br>10:00 am - 6:00 pm</div>
+            <div class="footer-content">Friday:<br>10:00 am - 1:00 pm</div>
+            <div class="footer-content">Saturday & Sunday:<br>Closed</div>
         </div>
+
+        <div class="footer-section">
+            <div class="footer-title">CONTACT</div>
+            <div class="footer-content">Phone: (919) 351-5787</div>
+            <div class="footer-content">Fax: (919) 842-5649</div>
+            <div class="footer-content">Email: <a href="mailto:info@briowellness.com">info@briowellness.com</a></div>
+            <a class="icon footer-content fa fa-instagram" href="https://www.instagram.com/briowellness/"></a>
+            <a class="icon footer-content fa fa-facebook" href="https://www.facebook.com/BrioWellness/"></a>
+        </div>   
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

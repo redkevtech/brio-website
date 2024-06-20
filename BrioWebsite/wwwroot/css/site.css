@@ -171,40 +171,58 @@
     background-color: #f6eadc;
     color: #301607;
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    text-align: center;
+    grid-template-columns: 33% 33% 33%;
+    text-align: left;
     justify-content: center;
-    left: 0;
     width: 100%;
-    padding: 30px 0;
+    padding: 30px;
+    font-family: Montserrat;
 }
 
-    #footer h1,
-    #footer h2,
-    #footer h3,
-    #footer h4,
-    #footer h5,
-    #footer h6 {
-        color: #301607;
-        font-weight: 700;
-        font-size: 24px;
-    }
+#footer a {
+    color: #301607;
+}
 
-    #footer a {
-        color: #301607;
-    }
+.footer-title {
+    font-weight: 600;
+    font-family: Montserrat;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.footer-subtitle {
+    font-family: Montserrat;
+    font-size: 16px;
+}
+.footer-content {
+    font-family: Montserrat;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+.footer-section{
+}
+
+#footer .icon {
+    text-decoration: none;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    text-align: center;
+}
 
 @media (max-width: 992px) {
-    #navbarLargeScreen{
-        visibility:hidden;
+    #navbarLargeScreen {
+        visibility: hidden;
     }
+
     .navbar-title > a {
         font-size: 26px;
     }
+
     .navbar-title > img {
         width: 40px;
         height: 40px;
     }
+
     #footer {
         grid-template-columns: auto;
         justify-content: left;
@@ -212,20 +230,28 @@
         padding: 20px;
     }
 
-    #footer h1,
-    #footer h2,
-    #footer h3,
-    #footer h4,
-    #footer h5,
-    #footer h6 {
-        font-size: 18px;
+    .footer-section {
+        width: 100%;
     }
 
     .section-content {
         font-size: 14px;
     }
-    .vertical-section{
+
+    .vertical-section {
         padding: 10px;
+    }
+
+    .footer-title {
+        font-size: 14px;
+    }
+
+    .footer-subtitle {
+        font-size: 12px;
+    }
+
+    .footer-content {
+        font-size: 12px;
     }
 }
 
@@ -304,13 +330,13 @@
 }
 
 .smaller-text {
-    font-size: 26px;
+    font-size: 24px;
 }
 
 
 @media (max-width: 2000px) {
     .smaller-text {
-        font-size: 24px;
+        font-size: 22px;
     }
 }
 
@@ -327,7 +353,7 @@
     }
 
     .smaller-text {
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 
@@ -344,7 +370,7 @@
     }
 
     .smaller-text {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
@@ -361,7 +387,7 @@
     }
 
     .smaller-text {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -378,7 +404,7 @@
     }
 
     .smaller-text {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -396,6 +422,6 @@
     }
 
     .smaller-text {
-        font-size: 14px;
+        font-size: 12px;
     }
 }

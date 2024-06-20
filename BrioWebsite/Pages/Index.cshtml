@@ -4,218 +4,198 @@
     ViewData["Title"] = "Home page";
 }
 <style>
+    :root {
+        --main-bg-color: rgba(255,165,50,.2);
+        --green-color: #16603b;
+        --white-color: #ffffff;
+    }
+
     #mainPage {
         background-image: url('Images/IMG_5654.jpg');
         background-repeat: no-repeat;
-
         background-position: center center;
         background-size: cover;
-        box-shadow: inset 0 0 0 1000px rgba(255,165,50,.2);
+        box-shadow: inset 0 0 0 1000px var(--main-bg-color);
     }
 
-    .logo {
+    .logo, .text-box {
         width: 100px;
         margin: 0;
     }
 
-    .green{
-        color:#16603b;
+    .green {
+        color: var(--green-color);
     }
 
-    #mainPage > *{
-        color: white;
+    #mainPage > *, .white-button, .white-button:hover {
+        color: var(--white-color);
     }
 
     .text-box {
-        width: 80%;
-        margin: 0;
         font-family: Montserrat;
     }
 
     .horizontal-line {
-        border-top: 5px solid #ffffff;
-        width: 1000px;
+        border-top: 5px solid var(--white-color);
         margin: 0;
         opacity: 1;
     }
 
-    .white-button {
+    .white-button, .green-button {
         display: inline-block;
-        padding: 10px 25px;
         background-color: transparent;
-        font-weight: bold;
-        border: solid 5px;
-        font-size: 36px;
         cursor: pointer;
         margin-top: 50px;
-
-        color: white;
-        border-color: white;
-
+        border-style: solid;
     }
+
+    .white-button {
+        padding: 10px 25px;
+        font-weight: bold;
+        border-width: 5px;
+        font-size: 36px;
+        border-color: var(--white-color);
+    }
+
     .green-button {
-        display: inline-block;
         padding: 5px 15px;
-        background-color: transparent;
-        border: solid 3px;
-        cursor: pointer;
-
-        color:#16603b;
-        border-color:#16603b;
+        border-width: 3px;
+        color: var(--green-color);
+        border-color: var(--green-color);
     }
-    
 
-    .grid{
+    .grid {
         display: grid;
         grid-template-columns: auto auto;
         width: 100%;
         padding: 0 7%;
         height: calc(100vh - 60px);
     }
+
     .grid-item {
-        height: 100%;
         justify-content: center;
         align-content: center;
         padding: 0 2vw;
     }
-    .grid-item > img{
-        height:min(75vh,30vw*2);
+
+    .grid-item > img {
+        height: min(75vh,30vw*2);
         width: min(auto,25vw);
-        justify-content: left
+        justify-content: left;
         align-content: center;
     }
 
-    ul.mainPage > li{
+    ul.mainPage > li, li {
         justify-content: center;
         align-content: center;
         display: flex;
     }
 
-    li {
-        display: flex;
-    }
-
-    ul{
+    ul {
         padding: 0;
-        margin:0;
+        margin: 0;
         padding: 0 10px;
     }
 
-
-@@media (max-width: 2000px) {
-    .grid {
-        padding: 0 5%;
-    }
-}
-
-@@media (max-width: 1700px) {
-
-    .horizontal-line {
-        width: 700px;
+    @@media (max-width: 2000px), (max-width: 1700px) {
+        .grid {
+            padding: 0 5%;
+        }
     }
 
-    .grid {
-        padding: 0 5%;
-    }
-}
-
-@@media (max-width: 1200px) {
-
-    .horizontal-line {
-        width: 600px;
+    @@media (max-width: 1700px) {
+        .horizontal-line {
+            width: 700px;
+        }
     }
 
-    .grid {
-        padding: 0 3%;
-    }
-}
-
-@@media (max-width: 992px) {
-    .horizontal-line {
-        width: 500px;
-    }
-
-    .body-container {
-        min-height: calc(100vh - 60px);
+    @@media (max-width: 1200px) {
+        .horizontal-line {
+            width: 600px;
+        }
+        .grid {
+            padding: 0 3%;
+        }
     }
 
-    #mainPage {
-        min-height: 100vh
+    @@media (max-width: 992px) {
+        .horizontal-line {
+            width: 500px;
+        }
+        .body-container {
+            min-height: calc(100vh - 60px);
+        }
+        #mainPage {
+            min-height: 100vh;
+        }
+        .grid {
+            grid-template-columns: auto;
+        }
+        .grid-item > img {
+            max-height: 40vh;
+        }
     }
 
-    .grid {
-        grid-template-columns: auto;
+    @@media (max-width: 768px) {
+        .horizontal-line {
+            width: 400px;
+        }
     }
 
-    .grid-item > img {
-        max-height: 40vh;
-    }
-}
-
-@@media (max-width: 768px) {
-    .horizontal-line {
-        width: 400px;
-    }
-}
-
-
-@@media (max-width: 576px) {
-    .horizontal-line {
-        width: 300px;
-    }
-}
-
-
-@@media (max-height: 790px) {
-    .grid-item > img {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-        padding: 0;
+    @@media (max-width: 576px) {
+        .horizontal-line {
+            width: 300px;
+        }
     }
 
-    .grid {
-        display: flex;
-        padding: 20px;
+    @@media (max-height: 790px) {
+        .grid-item > img {
+            visibility: hidden;
+            height: 0;
+            width: 0;
+            padding: 0;
+        }
+        .grid {
+            display: flex;
+            padding: 20px;
+        }
+        .grid-item {
+            height: 0;
+        }
     }
-
-    .grid-item {
-        height: 0;
-    }
-}
 </style>
 
 <div id="mainPage" class="body-container">
-            <div>
-                <ul class = "mainPage">
-                    <li>
-                        <p class="larger-text">Live the life you<br/>DESIRE and DESERVE</p>
-                    </li>
-                    <li>
-                        <hr class="horizontal-line">
-                    </li>
-                    <li>
-                        <div class="small-text">Chiropractic & Nutrition</div>
-                    </li>
-                    <li><button class="white-button "><div class="smaller-text">Book Now</div></button></li>
-                </ul>
+    <div>
+        <ul class="mainPage">
+            <li>
+                <p class="larger-text">Live the life you<br/>DESIRE and DESERVE</p>
+            </li>
+            <li>
+                <hr class="horizontal-line">
+            </li>
+            <li>
+                <div class="small-text">Chiropractic & Nutrition</div>
+            </li>
+            <li><button class="white-button "><div class="smaller-text">Book Now</div></button></li>
+        </ul>
     </div>
 </div>
 <div class="body-container">
-    <div class = "grid">
-        <div class ="grid-item">
+    <div class="grid">
+        <div class="grid-item">
             <img class="image-oval" alt="Pediatric.jpg" src="~/Images/Pediatric_updated.jpg" />
         </div>
         <div class="grid-item">
             <ul>
                 <li>
-                    <h1 class = "small-text green" style="text-align: left; margin-bottom: 20px;">Discover a path to wellness that is uniquely yours.</h1>
+                    <h1 class="small-text green" style="text-align: left; margin-bottom: 20px;">Discover a path to wellness that is uniquely yours.</h1>
                 </li>
                 <li>
-                    <p class = "smaller-text" style="text-align: left">Brio Wellness Center is a <b>woman-owned</b> clinic dedicated to offering top-tier chiropractic and wellness-focused services for individuals committed to their personal growth. Our focus lies in a holistic approach to health, blending natural remedies seamlessly into daily life.</p>
+                    <p class="smaller-text" style="text-align: left">Brio Wellness Center is a <b>woman-owned</b> clinic dedicated to offering top-tier chiropractic and wellness-focused services for individuals committed to their personal growth. Our focus lies in a holistic approach to health, blending natural remedies seamlessly into daily life.</p>
                 </li>
                 <li>
-                    <p class = "smaller-text" style="text-align: left">What distinguishes us is our belief that chiropractic care transcends mere spinal treatment—it's about nurturing the complete individual. Your mindset, enriched. Your physical well-being, enhanced. Because true health comes from embracing your utmost potential, ensuring you live life to its fullest capacity.</p>
+                    <p class="smaller-text" style="text-align: left">What distinguishes us is our belief that chiropractic care transcends mere spinal treatment—it's about nurturing the complete individual. Your mindset, enriched. Your physical well-being, enhanced. Because true health comes from embracing your utmost potential, ensuring you live life to its fullest capacity.</p>
                 </li>
                 <li>
                     <button class="green-button"><div class="smaller-text">Learn More</div></button>
