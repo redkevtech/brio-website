@@ -1,8 +1,173 @@
 ﻿@page
-@model PrivacyModel
+@model BrioWebsite.Pages.Index1Model
 @{
-    ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<style>
+    #planSections{
+        padding-top:100px;
+        display:grid;
+        justify-content: top;
+        font-family: roca one;
+
+        background-image: url('Images/Brio.png');
+        background-repeat: no-repeat;
+
+        background-position: center center;
+        background-size: cover;
+        box-shadow: inset 0 0 0 1000px rgba(242, 210, 189,.7);
+    }
+    .card-section{
+        height: 100%;
+    }
+    .text-section{
+        height: 100%;
+        color: #301607;
+    }
+    .text-section p {
+        font-family: montserrat;
+        padding: 10px 15vw;
+    }
+    .card-list{
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .card{
+        display: flex;
+        align-items: center; 
+
+        justify-content: center;
+
+        border-radius: 2vw;
+        background-color: #fff6ec;
+        padding: 10px;
+        margin: 10px 2vw;
+        
+        width: max(20vw,360px);
+        height: max(20vw,360px);
+        color: #301607;
+    }
+    .green-button {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: transparent;
+        border: solid 3px;
+        cursor: pointer;
+
+        color:#16603b;
+        border-color:#16603b;
+        font-family: montserrat;
+    }
+    .card-button {
+        padding: 15px;
+        border: 0;
+        border-radius: 50px;
+        width: 220px;
+        height: 60px;
+        line-height: 1;
+        justify-content: center;
+
+        background-color:#f2ddcb;
+        font-family: roca one;
+        color: #301607;
+    }
+
+    .card ul{
+        font-family: montserrat;
+        text-align: left;
+        width: 78%;
+        height: max(8vw,150px);
+    }
+    
+    .card > ul > li{
+        font-size: 18px;
+    }
+
+    .card-title{
+        margin: 0;
+        color: #16603b;
+        font-size: 36px;
+        line-height: 50px;
+        font-weight: 500;
+    }
+    .card-subtitle{
+        margin: 0;
+        color: #16603b;
+        font-size: 22px;
+        line-height: 40px;
+        font-weight: 100;
+    }
+    .card-price{
+        margin: 0;
+        color: #16603b;
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 100;
+        width: 75%;
+        text-align: left;
+    
+    }
+    
+    .small-text{
+        padding: 10px 50px 30px 50px;
+    }
+
+    @@media (max-width: 1200px) {
+        .card-list{
+            grid-template-columns: auto;
+        }
+    }
+</style>
+
+<div id="planSections" class="body-container">
+    <div class = "text-section">
+        <h1 class = "large-text">Chiropractic Packages & Care Plans</h1>
+        <p class = "small-text">Schedule a <b>free</b> 15-minute consultation with a doctors to determine which plan is best for you!</p>
+        <button class="green-button"><div class="smaller-text">Schedule Now</div></button>
+    </div>
+    <div class = "card-section">
+        <ul class = "card-list">
+            <li class = "card">
+                <div class = "card-title">Advantage Program</div>
+                <div class = "card-subtitle">Individual</div>
+                <div class = "card-price">$120+</div>
+                <ul>
+                    <li>Chiropractic Adjustments</li>
+                    <li>New Patient Exam</li>
+                    <li>Initial Nutrition Consult</li>
+                    <li>Standard Bloodwork</li>
+                    <li>ZytoScan</li>
+                </ul>
+                <button class="card-button"><div class="smaller-text">Schedule Now</div></button>
+            </li>
+            <li class = "card">
+                <div class = "card-title">Brio Bundle</div>
+                <div class = "card-subtitle">Individual</div>
+                <div class = "card-price">$75</div>
+                <ul>
+                    <li>Chiropractic Adjustments</li>
+                    <li>Red Light Therapy</li>
+                    <li>Brain Tap Therapy</li>
+                    <li>PEMF Therapy</li>
+                    <li>Message Chair</li>
+                </ul>
+                <button class="card-button"><div class="smaller-text">Schedule Now</div></button>
+            </li>
+            <li class = "card">
+                <div class = "card-title">Advantage Program</div>
+                <div class = "card-subtitle">Family Plan w/ Brio Bundle</div>
+                <div class = "card-price">$499+</div>
+                <ul>
+                    <li>Chiropractic Adjustments</li>
+                    <li>Advantage Program offerings</li>
+                    <li>Brio Bundle Offerings</li>
+                </ul>
+                <button class="card-button"><div class="smaller-text">Schedule Now</div></button>
+            </li>
+        </ul>
+    </div>
+</div>

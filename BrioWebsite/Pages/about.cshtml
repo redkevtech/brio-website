@@ -4,24 +4,132 @@
 }
 
 <style>
+    #aboutSections{
+        padding-top:80px;
+        display:grid;
+        font-family: roca one;
+
+        background-color: #fff6ec;
+    }
+    .body-container{
+        min-height: 100vh;
+    }
+    .card-section{
+    }
+    .text-section{
+        height: 100%;
+        color:#16603b;
+    }
+    .text-section p {
+        font-family: montserrat;
+        padding: 10px 15vw;
+    }
+    .card-list{
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
     .card{
+        display: flex;
+        align-items: center;
+
+        justify-content: top;
+        border: 0;
+        background-color: #fff6ec;
+        padding: 10px;
+        margin: 10px 2vw;
+        
+        color: #301607;
+    }
+    .green-button {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: transparent;
+        border: solid 3px;
+        cursor: pointer;
+
+        color:#16603b;
+        border-color:#16603b;
+        font-family: montserrat;
+    }
+    .card-button {
+        padding: 15px;
+        border: 0;
+        border-radius: 50px;
+        width: 220px;
+        height: 60px;
+        line-height: 1;
+        justify-content: center;
+
+        background-color:#f2ddcb;
+        font-family: roca one;
+        color: #301607;
     }
 
+    .card ul{
+        font-family: montserrat;
+        text-align: left;
+        width: 100%;
+    }
+
+    .card-title{
+        margin: 0;
+        color: #16603b;
+        line-height: 50px;
+        font-weight: 500;
+    }
+    .card-subtitle{
+        margin: 0;
+        color: #16603b;
+        line-height: 40px;
+        font-weight: 100;
+    }
+    .doctor_picture{
+        height: min(80vw,50vh);
+        border-radius: 100%;
+    }
+
+    @@media (max-width: 1200px) {
+        .card-list{
+            grid-template-columns: auto;
+        }
+
+        .card-section{
+            height: auto;
+        }
+    }
 </style>
 
-<div id="mainPage" class="body-container">
-    <div>
-        <ul class = "mainPage">
-            <li>
-                <p class="large-text">Live the life you<br/>DESIRE and DESERVE</p>
+<div id="aboutSections" class="body-container">
+    <div class = "text-section">
+        <h1 class = "large-text">Get to Know Us</h1>
+    </div>
+    <div class = "card-section">
+        <ul class = "card-list">
+            <li class = "card">
+                <img class = "doctor_picture" alt="dr_mindi" src="~/Images/dr_mindi_photo.png" />
+                <div class = "card-title small-text">Dr. Mindi Jentes</div>
+                <div class = "card-subtitle smaller-text">Doctor of Chiropractic</div>
+                <ul >
+                    <li class = "smaller-text">Advanced Proficiency Rated in Activator Methods Chiropractic Technique</li>
+                    <li class = "smaller-text">Certified Breast Thermography Physician & Technician (WABT-BTP, WABT-BTT)</li>
+                    <li class = "smaller-text">Graduated with B.A. in Opera Performance from Grace College</li>
+                    <li class = "smaller-text">Graduated with her D.C. from The Southern California University of Health Sciences</li>
+                </ul>
             </li>
-            <li>
-                <hr class="horizontal-line">
+            <li class = "card">
+                <img class = "doctor_picture" alt="dr_kayla.png" src="~/Images/dr_kayla_photo.png" />
+                <div class = "card-title small-text">Dr. Kayla Sagester</div>
+                <div class = "card-subtitle smaller-text">Doctor of Chiropractic</div>
+                <ul>
+                    <li class = "smaller-text">Advanced Proficiency Rated in Activator Methods Chiropractic Technique</li>
+                    <li class = "smaller-text">Certified Breast Thermography Technician (WABT-BTT)</li>
+                    <li class = "smaller-text">Graduated with B.S. in Health Science from Grace College</li>
+                    <li class = "smaller-text">Graduated with her D.C. from The Southern California University of Health Sciences</li>
+                </ul>
             </li>
-            <li>
-                <div class="small-text">Chiropractic & Nutrition</div>
-            </li>
-            <li><button class="white-button "><div class="smaller-text">Book Now</div></button></li>
         </ul>
     </div>
 </div>
