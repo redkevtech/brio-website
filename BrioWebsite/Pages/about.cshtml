@@ -41,7 +41,7 @@
     .card{
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* This ensures the content list stays at the bottom */
+        justify-content: space-between;
         align-items: center;
         border: 0;
         background-color: #fff6ec;
@@ -54,18 +54,15 @@
         background-color: transparent;
         border: solid 3px;
         cursor: pointer;
-
         color:#16603b;
         border-color:#16603b;
         font-family: montserrat;
     }
-
     .card ul{
         font-family: montserrat;
         text-align: center;
         width: 100%;
     }
-
     .card-title{
         margin: 0;
         color: #16603b;
@@ -86,37 +83,31 @@
     .doctor_picture{
         height: 75vw;
         max-height: 55vh;
-
         border-radius: 100%;
         justify-content: top;
         padding: 10px 0;
     }
-
     .about-img{
         width:90%;
         max-width: 1200px;
         border-radius: 5vw;
         margin: 20px auto;
-        
     }
     .about-text{
         text-align: left;
         font-family: montserrat;
         color: #301607;
     }
-
     .about-text h1{
         text-align: center;
         font-family: roca one;
         color: #16603b;
         margin: 0 0 20px 0;
     }
-
     @@media (max-width: 1200px) {
         .card-list{
             grid-template-columns: auto;
         }
-
         .card-section{
             height: auto;
         }
