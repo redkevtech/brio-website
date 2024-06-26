@@ -7,9 +7,37 @@
     font-family: 'Montserrat';
     src: url(../Fonts/Montserrat-VariableFont_wght.ttf);
 }
+:root {
+    --main-bg-color: rgba(255,165,50,.2);
+    --green-color: #16603b;
+    --white-color: #ffffff;
+}
 
 .image-oval{
     border-radius: 50%;
+}
+
+
+.white-button, .green-button {
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    border-style: solid;
+    text-decoration: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    border-width: 5px;
+    font-size: 36px;
+}
+
+.white-button, .white-button:hover {
+    color: var(--white-color);
+    border-color: var(--white-color);
+}
+
+.green-button, .green-button:hover {
+    color: var(--green-color);
+    border-color: var(--green-color);
 }
 
 .body-container {
@@ -215,7 +243,7 @@
     }
 
     .navbar-title > a {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .navbar-title > img {
