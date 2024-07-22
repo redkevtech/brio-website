@@ -32,7 +32,7 @@
         margin: 0;
         padding: 0;
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto auto auto;
     }
 
     .card {
@@ -49,12 +49,16 @@
         text-decoration: none;
 
         display: grid;
-        grid-template-rows: 25% 8% 12% auto 13%;
+        grid-template-rows: 20% 8% auto 3% 100%;
     }
 
     .card > *{
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .card-subheader{
+        margin-top: 20px;
     }
 
     .card-button {
@@ -79,13 +83,12 @@
         font-family: montserrat;
         text-align: left;
         width: 90%;
-        height: 150px;
-        font-size: 18px;
+        height: 90%;
+        font-size: 16px;
     }
 
     .card-title,
-    .card-subtitle,
-    .card-price {
+    .card-subtitle{
         margin: 0;
         color: #16603b;
         font-weight: 100;
@@ -102,22 +105,52 @@
         line-height: 40px;
     }
 
-    .card-price {
-        font-size: 40px;
-        line-height: 50px;
-        width: 85%;
-        text-align: left;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .small-text {
         padding: 10px 50px 30px 50px;
+    }
+
+    .card-section > h1{
+        padding-top: 50px;
+    }
+    
+    .subtitle{
+        font-size: 60px;
+    }
+
+    @@media (max-width: 1850px) {
+        .card-list2 {
+            grid-template-columns: auto auto;
+        }
     }
 
     @@media (max-width: 1350px) {
         .card-list {
             grid-template-columns: auto auto;
+        }
+
+        .card-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .center {
+            grid-column: 1 / -1;
+            justify-self: center;
+        }
+
+        .left {
+            justify-self: right;
+        }
+
+        .right {
+            justify-self: left;
+        }
+
+        .subtitle {
+            font-size: 50px;
         }
     }
 
@@ -127,8 +160,8 @@
         }
 
         .card {
-            width: 300px;
-            height: 300px;
+            width: 350px;
+            height: 350px;
         }
 
         .card-title {
@@ -139,11 +172,6 @@
         .card-subtitle {
             font-size: 18px;
             line-height: 25px;
-        }
-
-        .card-price {
-            font-size: 30px;
-            line-height: 40px;
         }
 
         .card-button {
@@ -158,19 +186,23 @@
             font-family: montserrat;
             text-align: left;
             width: 95%;
-            height: 110px;
-            font-size: 14px;
+            font-size: 13px;
+        }
+
+        .subtitle {
+            font-size: 40px;
         }
     }
 
-    @@media (max-width: 650px) {
+    @@media (max-width: 780px) {
         .card-list {
             grid-template-columns: auto;
+            grid-template-rows: auto auto;
         }
 
         .card {
-            width: 300px;
-            height: 300px;
+            width: 350px;
+            height: 350px;
         }
 
         .card-title {
@@ -181,11 +213,6 @@
         .card-subtitle {
             font-size: 18px;
             line-height: 25px;
-        }
-
-        .card-price {
-            font-size: 30px;
-            line-height: 40px;
         }
 
         .card-button {
@@ -200,8 +227,11 @@
             font-family: montserrat;
             text-align: left;
             width: 95%;
-            height: 100px;
-            font-size: 14px;
+            font-size: 12px;
+        }
+
+        .subtitle {
+            font-size: 30px;
         }
     }
 
@@ -214,67 +244,102 @@
         <a target="_blank" class="green-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Schedule Now</div></a>
     </div>
     <div class = "card-section">
-        <ul class = "card-list">
-            <li class = "card">
-                <div class = "card-title">Chiropractic Appointment</div>
-                <div class = "card-subtitle">New Patient</div>
-                <div class = "card-price">$120+</div>
+        <h1 class="subtitle"></h1>
+        <ul class="card-list">
+            <li class="card left">
+                <div class="card-title">New Patient Appointment</div>
+                <div class="card-subtitle">$400 value for $250</div>
                 <ul>
-                    <li>Chiropractic Adjustments</li>
-                    <li>New Patient Exam</li>
-                    <li>Initial Nutrition Consult</li>
-                    <li>Standard Bloodwork</li>
-                    <li>ZytoScan</li>
+                    <li>Your first chiropractic adjustment</li>
+                    <li>Thorough history and exam</li>
+                    <li>Comprehensive ZYTO scan</li>
                 </ul>
-                <a target="_blank" class="card-button white-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Schedule Now</div></a>
+                <div class="card-subheader">If recommended:</div>
+                <ul>
+                    <li>Hot and cold therapies</li>
+                    <li>Therapeutic exercises or postural recommendations</li>
+                    <li>Supplement and dietary recommendations</li>
+                    <li>X-rays (additional cost of $40 per region)</li>
+                </ul>
+                @* <a target="_blank" class="card-button white-button" href="#"><div class="smaller-text">Learn More</div></a> *@
             </li>
-            <li class = "card">
-                <div class = "card-title">Chiropractic Adjustments</div>
-                <div class = "card-subtitle"></div>
-                <div class = "card-price">$68 a visit</div>
+            <li class="card right">
+                <div class="card-title">Chiropractic Adjustments</div>
+                <div class="card-subtitle">$68 a visit</div>
                 <ul>
-                    <li>Chiropractic Adjustments</li>
-                    <li>Red Light Therapy</li>
-                    <li>Brain Tap Therapy</li>
-                    <li>PEMF Therapy</li>
-                    <li>Message Chair</li>
+                    <li>Your chiropractic adjustment</li>
                 </ul>
-                <a target="_blank" class="card-button white-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Schedule Now</div></a>
+                <div class="card-subheader">If recommended:</div>
+                <ul>
+                    <li>Hot and cold therapies</li>
+                    <li>Therapeutic exercises or postural recommendations</li>
+                    <li>Supplement and dietary recommendations</li>
+                </ul>
+                @* <a target="_blank" class="card-button white-button" href="#"><div class="smaller-text">Learn More</div></a> *@
             </li>
-            <li class = "card">
-                <div class = "card-title">Brio Bundle</div>
-                <div class = "card-subtitle"></div>
-                <div class = "card-price">$75 a visit</div>
+            <li class="card center">
+                <div class="card-title">Brio Bundle</div>
+                <div class="card-subtitle">$75 a visit</div>
                 <ul>
-                    <li>Chiropractic Adjustments</li>
-                    <li>Advantage Program offerings</li>
-                    <li>Brio Bundle Offerings</li>
+                    <li>Your chiropractic adjustment</li>
                 </ul>
-                <a target="_blank" class="card-button white-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Schedule Now</div></a>
+                <div class="card-subheader">If recommended:</div>
+                <ul>
+                    <li>Hot and cold therapies</li>
+                    <li>Therapeutic exercises or postural recommendations</li>
+                    <li>Supplement and dietary recommendations</li>
+                    <li>PLUS the option to include up to 30 minutes of the following therapies:</li>
+                    <li>Deluxe massage chair, PEMF therapy, BrainTap, RedLight therapy</li>
+                </ul>
+                @* <a target="_blank" class="card-button white-button" href="#"><div class="smaller-text">Learn More</div></a> *@
             </li>
         </ul>
-        <ul class="card-list">
-            <li class="card">
-                <div class="card-title">Dummy Title 4</div>
-                <div class="card-subtitle">Dummy Subtitle</div>
-                <div class="card-price">$XX</div>
+
+        <h1 class="subtitle">Advantage Programs</h1>
+        <ul class="card-list card-list2">
+            <li class="card left">
+                <div class="card-title">Individual Advantage Plan</div>
+                <div class="card-subtitle">Price Varies</div>
                 <ul>
-                    <li>Dummy Feature 1</li>
-                    <li>Dummy Feature 2</li>
-                    <li>Dummy Feature 3</li>
+                    <li>20% off most treatment types</li>
+                    <li>10% off all products, supplements, & blood labs</li>
+                    <li>Pay the annual price for your care in 12 equal monthly installments.</li>
                 </ul>
-                <a target="_blank" class="card-button white-button" href="#"><div class="smaller-text">Learn More</div></a>
+                @* <a target="_blank" class="card-button white-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Schedule Now</div></a> *@
             </li>
-            <li class="card">
-                <div class="card-title">Dummy Title 5</div>
-                <div class="card-subtitle">Dummy Subtitle</div>
-                <div class="card-price">$XX</div>
+            <li class="card right">
+                <div class="card-title">Group Advantage Plan</div>
+                <div class="card-subtitle">Price Varies</div>
                 <ul>
-                    <li>Dummy Feature 1</li>
-                    <li>Dummy Feature 2</li>
-                    <li>Dummy Feature 3</li>
+                    <li>Unlimited Household Members</li>
+                    <li>20% off most treatment types</li>
+                    <li>10% off all products, supplements, & blood labs</li>
+                    <li>Pay the annual price for your family’s care in 12 equal monthly installments.</li>
                 </ul>
-                <a target="_blank" class="card-button white-button" href="#"><div class="smaller-text">Learn More</div></a>
+                @* <a target="_blank" class="card-button white-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Schedule Now</div></a> *@
+            </li>
+            <li class="card left">
+                <div class="card-title">Unlimited Family Advantage Plan</div>
+                <div class="card-subtitle">$299/month</div>
+                <ul>
+                    <li>Unlimited Household Members</li>
+                    <li>Unlimited Adjustments</li>
+                    <li>Free New Patient Exams & Re-Exams</li>
+                    <li>10% off all products, supplements, & blood labs</li>
+                </ul>
+                @* <a target="_blank" class="card-button white-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Schedule Now</div></a> *@
+            </li>
+            <li class="card right">
+                <div class="card-title">Unlimited Family Advantage Plan+</div>
+                <div class="card-subtitle">$449/month</div>
+                <ul>
+                    <li>Unlimited Household Members</li>
+                    <li>Unlimited Adjustments</li>
+                    <li>Free New Patient Exams & Re-Exams</li>
+                    <li>10% off all products, supplements, & blood labs</li>
+                    <li>Unlimited Therapies (Deluxe Massage Chair, PEMF therapy, BrainTap, and RedLight therapy)</li>
+                </ul>
+                @* <a target="_blank" class="card-button white-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Schedule Now</div></a> *@
             </li>
         </ul>
     </div>
