@@ -10,14 +10,6 @@
         --white-color: #ffffff;
     }
 
-    #mainPage {
-        background-image: url('Images/IMG_5654.jpg');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        box-shadow: inset 0 0 0 1000px var(--main-bg-color);
-    }
-
     .text {
         font-family: montserrat;
         color: #301607;
@@ -30,10 +22,6 @@
 
     .green {
         color: var(--green-color);
-    }
-
-    #mainPage{
-        color: var(--white-color);
     }
 
     .text-box {
@@ -66,6 +54,25 @@
         width: min(auto,25vw);
         justify-content: left;
         align-content: center;
+    }
+
+    #mainPage {
+        background-image: url('Images/chiropractic-doctor-dr-kayla-adjusting-child-knee-activator.webp');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        box-shadow: inset 0 0 0 1000px var(--main-bg-color);
+        lazyload: true;
+    }
+    @@media (max-width: 850px) {
+        #mainPage {
+            background-image: url('Images/mobile-chiropractic-doctor-dr-kayla-adjusting-child-knee-activator.webp');
+            lazyload: true;
+        }
+    }
+
+    #mainPage {
+        color: var(--white-color);
     }
 
     ul.mainPage > li, li {
@@ -140,11 +147,11 @@
     }
 </style>
 
-<div id="mainPage" class="body-container">
+<div id="mainPage" class="body-container" alt="Chiropractor Dr. Kayla Jentes-Sagester adjusting a child's knee with an activator at Brio Wellness Center using activator methods" title="Dr. Kayla adjusting child's knee with activator at Brio Wellness Center">
     <div>
         <ul class="mainPage">
             <li>
-                <p class="larger-text">Live the life you<br/>DESIRE and DESERVE</p>
+                <p class="larger-text">Live the life you<br /><b>DESIRE</b> and <b>DESERVE</b></p>
             </li>
             <li>
                 <hr class="horizontal-line">
@@ -152,14 +159,14 @@
             <li>
                 <div class="small-text">Chiropractic & Nutrition</div>
             </li>
-            <li><a target="_blank" class="white-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Book Now</div></a></li>
+            <li><a target="_blank" class="white-button smaller-text" href="https://briowellness.janeapp.com/">Book Now</a></li>
         </ul>
     </div>
 </div>
 <div class="body-container">
     <div class="grid">
         <div class="grid-item">
-            <img class="image-oval" alt="Pediatric.jpg" src="~/Images/Pediatric_updated.jpg" />
+            <img lazyLoad class="image-oval" src="~/Images/dr-kayla-checking-child-spine-alignment-activator-methods.webp" alt="Dr. Kayla Jentes-Sagester evaluating a child's spine alignment using activator methods to relieve pain at Brio Wellness Center" title="Dr. Kayla checking child’s spine alignment with activator methods" />
         </div>
         <div class="grid-item">
             <ul>
@@ -167,15 +174,16 @@
                     <h1 class="small-text green" style="text-align: left; margin-bottom: 20px;">Discover a path to wellness that is uniquely yours.</h1>
                 </li>
                 <li>
-                    <p class="smaller-text text" style="text-align: left">Brio Wellness Center is a <b>woman-owned</b> clinic dedicated to offering top-tier chiropractic and wellness-focused services for individuals committed to their personal growth. Our focus lies in a holistic approach to health, blending natural remedies seamlessly into daily life.</p>
+                    <p class="smaller-text text" style="text-align: left">Brio Wellness Center is a <em>woman-owned</em> wellness clinic dedicated to offering <b>top-tier</b> chiropractic care and <b>holistic health services</b> for individuals committed to their <em>personal growth</em>. Our focus lies in a <em>holistic approach to health</em>, blending <em>natural remedies</em> seamlessly into daily life.</p>
                 </li>
                 <li>
-                    <p class="smaller-text text" style="text-align: left">What distinguishes us is our belief that chiropractic care transcends mere spinal treatment—it's about nurturing the complete individual. Your mindset, enriched. Your physical well-being, enhanced. Because true health comes from embracing your utmost potential, ensuring you live life to its fullest capacity.</p>
+                    <p class="smaller-text text" style="text-align: left">What distinguishes us is our belief that chiropractic care transcends mere spinal treatment—it's about <b>nurturing</b> the complete individual. Your mindset, <b>enriched</b>. Your physical well-being, <b>enhanced</b>. Because true health comes from <em>embracing your utmost potential</em>, ensuring you <em>live life to its fullest capacity.</em></p>
                 </li>
                 <li>
-                    <a target="_blank" class="green-button" href="https://briowellness.janeapp.com/"><div class="smaller-text">Learn More</div></a>
+                    <a target="_blank" class="green-button smaller-text" href="https://briowellness.janeapp.com/">Book Now</a>
                 </li>
             </ul>
         </div>
+
     </div>
 </div>
