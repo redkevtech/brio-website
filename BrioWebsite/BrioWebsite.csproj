@@ -10,4 +10,8 @@
     <None Include="wwwroot\Images\Home\Home.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.7.1.1" />
+  </ItemGroup>
+
 </Project>

@@ -193,7 +193,6 @@
     padding: 0;
     margin: 0;
 }
-
 /* Style for the footer */
 #footer {
     background-color: #f6eadc;
@@ -207,7 +206,7 @@
     font-family: Montserrat;
 }
 
-#footer a {
+#footer a:not(.green-button) {
     color: #301607;
 }
 
@@ -227,6 +226,35 @@
     padding-bottom: 5px;
 }
 
+#footer-form {
+    grid-column: 1 / -1; /* Spans across all columns */
+    padding: 20px 0; /* Adds padding around the form */
+    text-align: center; /* Centers the form content */
+}
+
+#footer-form input, #footer-form textarea, #footer-form button {
+    font-family: Montserrat; /* Matches the font to the rest of the footer */
+    margin: 5px auto; /* Centers items and adds spacing */
+    display: block; /* Aligns elements in block style */
+    width: 80%; /* Sets a max width, adjust as needed */
+    max-width: 400px; /* Ensures form elements do not get too wide */
+}
+
+#footer-form .form-title {
+    font-family: 'Roca One';
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+#footer-form button {
+    background-color: #301607;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px; /* Adds rounded corners to the button */
+}
+
 #footer .icon {
     text-decoration: none;
     height: 30px;
@@ -235,57 +263,89 @@
     text-align: center;
 }
 
-#footer .icon  > div{
+#footer .icon > div {
     visibility: hidden;
 }
 
-@media (max-width: 992px) {
-    #navbarLargeScreen {
-        visibility: hidden;
-    }
-
-    .navbar-title > a {
-        font-size: 24px;
-    }
-
-    .navbar-title > img {
-        width: 40px;
-        height: 40px;
-    }
-
-    #footer {
-        grid-template-columns: auto;
-        justify-content: left;
-        text-align: left;
-        padding: 20px;
-    }
-
-    .footer-section {
-        width: 100%;
-    }
-
-    .section-content {
-        font-size: 14px;
-    }
-
-    .vertical-section {
-        padding: 10px;
-    }
-
-    .footer-title {
-        font-size: 14px;
-    }
-
-    .footer-subtitle {
-        font-size: 12px;
-    }
-
-    .footer-content {
-        font-size: 12px;
-    }
+#footer-form .form-field{
+    margin-bottom:20px;
+    border-color: transparent;
+    border-radius: 5px;
 }
 
-#sideMenuOpenButton {
+#footer-form button {
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    border-style: solid;
+    text-decoration: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    border-width: 5px;
+    background-color: transparent;
+    font-size: 16px;
+    color: var(--green-color);
+
+    border-radius:0;
+    width: auto;
+}
+
+    @media (max-width: 992px) {
+        #navbarLargeScreen {
+            visibility: hidden;
+        }
+
+        .navbar-title > a {
+            font-size: 24px;
+        }
+
+        .navbar-title > img {
+            width: 40px;
+            height: 40px;
+        }
+
+        #footer {
+            grid-template-columns: 100%;
+            justify-content: left;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .footer-section {
+            width: 100%;
+        }
+
+        .section-content {
+            font-size: 14px;
+        }
+
+        .vertical-section {
+            padding: 10px;
+        }
+
+        .footer-title {
+            font-size: 14px;
+        }
+
+        .footer-subtitle {
+            font-size: 12px;
+        }
+
+        .footer-content {
+            font-size: 12px;
+        }
+
+        #footer-form {
+            width: 100%;
+            text-align: center;
+        }
+
+            #footer-form input, #footer-form textarea, #footer-form button {
+                width: 95%;
+            }
+    }
+
+    #sideMenuOpenButton {
     border: 0px;
 }
 

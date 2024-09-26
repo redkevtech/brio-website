@@ -86,15 +86,43 @@
     <div class="body-div">
         @RenderBody()
     </div>
-
     <footer id="footer">
+        <!-- Form section -->
+        <div id="footer-form">
+            <h2 class="form-title">Let's Connect</h2>
+            <form id="footerForm">
+                @Html.AntiForgeryToken() <!-- Add this line to include the anti-forgery token -->
+
+                <input class="form-field" type="text" id="name" name="name" required placeholder="Name">
+                <input class="form-field" type="email" id="email" name="email" required placeholder="Email Address">
+                <input class="form-field" type="tel" id="phone" name="phone" placeholder="Phone number">
+                <textarea class="form-field" rows="5" id="message" name="message" required placeholder="What can we do for you?"></textarea>
+                <button type="submit" class="green-button">Submit</button>
+            </form>
+
+            <!-- This is where the response will be displayed after form submission -->
+            <div id="form-output" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; display: none;">
+                <h3>Submitted Form Data:</h3>
+                <p id="output-name"></p>
+                <p id="output-email"></p>
+                <p id="output-phone"></p>
+                <p id="output-message"></p>
+            </div>
+        </div>
+
+
+
+
+        <!-- Original footer content -->
         <div class="footer-section">
             <div class="footer-title">ADDRESS</div>
-            <div class="footer-content">Selma Office<br>
-                <a target="_blank" href="https://maps.app.goo.gl/zon2EcUHLjK7kgdr8" target="_blank">805 N Pollock St. Selma, NC 27576</a>
+            <div class="footer-content">
+                Selma Office<br>
+                <a target="_blank" href="https://maps.app.goo.gl/zon2EcUHLjK7kgdr8">805 N Pollock St. Selma, NC 27576</a>
             </div>
-            <div class="footer-content">Raleigh Office<br>
-                <a target="_blank" href="https://maps.app.goo.gl/caNWLhK5XW4RzRye8" target="_blank">184 Wind Chime Ct. Suite 202, Raleigh, NC 27615</a><br>
+            <div class="footer-content">
+                Raleigh Office<br>
+                <a target="_blank" href="https://maps.app.goo.gl/caNWLhK5XW4RzRye8">184 Wind Chime Ct. Suite 202, Raleigh, NC 27615</a><br>
                 <div>[Appointment Only]</div>
             </div>
         </div>
@@ -114,11 +142,52 @@
             <div class="footer-content">Email: <a href="mailto:info@briowellness.com">info@briowellness.com</a></div>
             <a target="_blank" class="icon footer-content fa fa-instagram" href="https://www.instagram.com/briowellness/"><div>Instagram</div></a>
             <a target="_blank" class="icon footer-content fa fa-facebook" href="https://www.facebook.com/BrioWellness/"><div>Facebook</div></a>
-        </div>   
+        </div>
     </footer>
 
-    <script async src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script async src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Place your custom JavaScript after jQuery is loaded -->
+    <script>
+        $(document).ready(function () {
+            $('#footerForm').submit(function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                var formData = $(this).serialize();
+                var antiForgeryToken = $('input[name="__RequestVerificationToken"]').val();
+
+                // Store current scroll position
+                var currentScrollPosition = $(window).scrollTop();
+
+                $.ajax({
+                    type: "POST",
+                    url: '/Form', // URL to match your Razor Page form handler
+                    data: formData,
+                    headers: {
+                        "RequestVerificationToken": antiForgeryToken // Include the anti-forgery token
+                    },
+                    success: function (response) {
+                        // Display the returned form data in the output section
+                        $('#output-name').text('Name: ' + response.name);
+                        $('#output-email').text('Email: ' + response.email);
+                        $('#output-phone').text('Phone: ' + response.phone);
+                        $('#output-message').text('Message: ' + response.message);
+                        $('#form-output').show(); // Display the output div
+
+                        // Restore the previous scroll position
+                        $(window).scrollTop(currentScrollPosition);
+                    },
+                    error: function (xhr, status, error) {
+                        alert('An error occurred: ' + error);
+                    }
+                });
+            });
+        });
+
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
