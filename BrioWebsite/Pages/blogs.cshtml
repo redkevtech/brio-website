@@ -1,0 +1,97 @@
+﻿@page
+@model BrioWebsite.Pages.BlogsModel
+@{
+    ViewData["Title"] = "Blogs";
+}
+
+<!-- Custom Styles -->
+<style>
+    .body-container {
+        background-color: #fff6ec;
+        padding-top: 80px;
+        font-family: 'Roca One', sans-serif;
+        display:grid;
+    }
+    .blog-list {
+        list-style: none;
+        text-align: left;
+    }
+
+    .blog-item {
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        text-align: left;
+    }
+
+    .blog-item {
+        margin-bottom: 10px;
+    }
+
+    .blog-item .tags {
+        margin-top: 10px;
+    }
+
+    .blog-item .tags span {
+        color: #301607;
+        font-family: montserrat;
+        background-color: #f1aa49;
+        padding: 4px 11px 6px 11px;
+        border-radius: 5px;
+        margin: 5px 10px 5px 0px;
+        display: inline-block;
+        white-space: nowrap; /* Prevents tags from breaking */
+    }
+
+    .blog-item .smaller-text {
+        font-family: montserrat;
+    }
+
+    .blog-item .small-text {
+        margin-bottom: 10px;
+    }
+
+    h1{
+        margin: 50px;
+    }
+
+    .read-more {
+        color: #301607;
+        font-family: montserrat;
+        font-weight: bold;
+        text-decoration: none;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    .read-more:hover {
+        color: #301607;
+    }
+</style>
+
+<div class="body-container">
+    <!-- Blog Listing -->
+    <h1 class="small-text">Learn more about your frequently asked questions</h1>
+
+    <ul class="blog-list">
+        @foreach (var blog in Model.BlogPosts)
+        {
+            <li class="blog-item">
+                <div class="small-text">@blog.Title</div>
+                <div class="smaller-text">By @blog.Author</div>
+                <div class="smaller-text">@blog.Summary</div>
+
+                <!-- Tags -->
+                <div class="smaller-text tags">
+                    @foreach (var tag in blog.Tags)
+                    {
+                        <span>@tag</span>
+                    }
+                </div>
+
+                <!-- Read More link -->
+                <a href="/blog/@blog.Navigation" class="read-more">READ MORE &rarr;</a>
+            </li>
+        }
+    </ul>
+</div>
