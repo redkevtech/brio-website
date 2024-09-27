@@ -16,7 +16,7 @@
     /* Title section - full width */
     .blog-title-section {
         background-color: #d3e0c9;
-        color: black;
+        color: #301607;
         padding: 30px;
         text-align: left;
         width: 100vw; /* Ensure it takes the full width */
@@ -72,6 +72,29 @@
         white-space: nowrap; /* Prevents tags from breaking */
     }
 
+    ul, ol {
+        padding-left: 30px;
+    }
+
+    ol {
+        counter-reset: item;
+        list-style-type: none;
+    }
+
+        ol li {
+            position: relative;
+            margin-bottom: 5px;
+            padding-left: 35px;
+        }
+
+            ol li::before {
+                content: counter(item) ".";
+                counter-increment: item;
+                position: absolute;
+                left: 0;
+                width: 20px;
+                text-align: left;
+            }
     /* Responsive design for smaller screens */
     @@media (max-width: 992px) {
         .blog-content-section {
@@ -79,7 +102,7 @@
         }
 
         .blog-image {
-            width: 45vw;
+            width: min(45vw,auto);
         }
     }
 </style>
@@ -108,5 +131,6 @@
         {
             <p>@Html.Raw(paragraph)</p>
         }
+        <p><strong>Disclaimer:</strong> The content of this article, such as graphics, images, text and all other materials, is provided for reference and educational purposes only. The content is not meant to be complete or exhaustive or to apply to any specific individual's medical condition. This article is not an attempt to practice medicine or provide specific medical advice, and it should not be used to make a diagnosis or to replace or overrule a qualified healthcare provider's judgment. The reader should not rely on this content for emergency medical treatment. The content in this article is not intended to be a substitute for professional medical advice, diagnosis or treatment. Always consult with a qualified and licensed physician or other healthcare provider for guidance.</p>
     </div>
 </div>
