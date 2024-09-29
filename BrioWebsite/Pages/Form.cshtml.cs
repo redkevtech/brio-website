@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MimeKit;
-using MailKit.Net.Smtp;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace BrioWebsite.Pages
@@ -36,26 +36,22 @@ namespace BrioWebsite.Pages
 
             IsPostBack = true;
 
-            // Prepare the email message
-            var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress("Website Contact", "your-email@example.com"));
-            emailMessage.To.Add(new MailboxAddress("Brio Wellness", "info@briowellness.com"));
-            emailMessage.Subject = "New Contact Form Submission";
+            // Define the path to the CSV file in the root folder
+            string csvFilePath = Path.Combine(Directory.GetCurrentDirectory(), "ContactFormSubmissions.csv");
 
-            emailMessage.Body = new TextPart("plain")
-            {
-                Text = $"Name: {Name}\nEmail: {Email}\nPhone: {Phone}\nMessage: {Message}"
-            };
+            // Prepare the CSV line
+            var csvLine = new StringBuilder();
+            csvLine.AppendLine($"{Name},{Email},{Phone},{Message}");
 
-            // Sending email
-            using (var client = new SmtpClient())
+            // Check if the file already exists. If not, create it and add headers.
+            if (!System.IO.File.Exists(csvFilePath))
             {
-                // For demo purposes, you can use a simple test SMTP service like smtp.gmail.com or any other SMTP provider
-                await client.ConnectAsync("smtp.gmail.com", 587, false);
-                await client.AuthenticateAsync("your-email@gmail.com", "your-password");
-                await client.SendAsync(emailMessage);
-                await client.DisconnectAsync(true);
+                var csvHeader = "Name,Email,Phone,Message";
+                await System.IO.File.WriteAllTextAsync(csvFilePath, csvHeader + "\n");
             }
+
+            // Append the new form data to the file
+            await System.IO.File.AppendAllTextAsync(csvFilePath, csvLine.ToString());
 
             // Return a success message in JSON format
             var response = new
@@ -70,4 +66,3 @@ namespace BrioWebsite.Pages
         }
     }
 }
-

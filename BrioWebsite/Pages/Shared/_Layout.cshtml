@@ -101,7 +101,7 @@
     <footer id="footer">
         <!-- Form section -->
         <div id="footer-form">
-            <h2 class="form-title">Let's Connect</h2>
+            <h2 id="form-title">Let's Connect</h2>
             <form id="footerForm">
                 @Html.AntiForgeryToken() <!-- Add this line to include the anti-forgery token -->
 
@@ -113,12 +113,7 @@
             </form>
 
             <!-- This is where the response will be displayed after form submission -->
-            <div id="form-output" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; display: none;">
-                <h3>Submitted Form Data:</h3>
-                <p id="output-name"></p>
-                <p id="output-email"></p>
-                <p id="output-phone"></p>
-                <p id="output-message"></p>
+            @* <h2 id="form-output" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; display: none;">We will contact you soon!</h2> *@
             </div>
         </div>
 
@@ -182,15 +177,9 @@
                         "RequestVerificationToken": antiForgeryToken // Include the anti-forgery token
                     },
                     success: function (response) {
-                        // Display the returned form data in the output section
-                        $('#output-name').text('Name: ' + response.name);
-                        $('#output-email').text('Email: ' + response.email);
-                        $('#output-phone').text('Phone: ' + response.phone);
-                        $('#output-message').text('Message: ' + response.message);
-                        $('#form-output').show(); // Display the output div
-
-                        // Restore the previous scroll position
-                        $(window).scrollTop(currentScrollPosition);
+                        $('#footerForm').hide(); // Hide the form
+                        $('#form-title').text('We will contact you soon!').show(); // Set the value of form title to "We will contact you soon!"
+                        // $(window).scrollTop(currentScrollPosition); // Restore the previous scroll position
                     },
                     error: function (xhr, status, error) {
                         alert('An error occurred: ' + error);

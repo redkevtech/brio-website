@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Xml;
 
 namespace BrioWebsite.Pages
 {
@@ -46,7 +47,7 @@ namespace BrioWebsite.Pages
                         Title = blogPost.Title;
                         Author = blogPost.Author;  // Capture the author
                         PublishDate = blogPost.PublishDate;
-                        ImageFile = "/Blogs/Images/"+blogPost.ImageFile;  // Capture the image
+                        ImageFile = "/Blogs/Images/" + blogPost.ImageFile;  // Capture the image
                         ImageTitle = blogPost.ImageTitle;  // Capture the image
                         ImageAlt = blogPost.ImageAlt;  // Capture the image
                         Content = blogPost.Content;  // Capture the list of paragraphs

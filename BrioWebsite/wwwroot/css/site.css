@@ -240,7 +240,7 @@
     max-width: 400px; /* Ensures form elements do not get too wide */
 }
 
-#footer-form .form-title {
+#footer-form #form-title {
     font-family: 'Roca One';
     margin-bottom: 20px;
     font-size: 30px;
