@@ -41,12 +41,12 @@ namespace BrioWebsite.Pages
 
             // Prepare the CSV line
             var csvLine = new StringBuilder();
-            csvLine.AppendLine($"{Name},{Email},{Phone},{Message}");
+            csvLine.AppendLine($"{DateTime.UtcNow.ToString("MM/dd/yyyy HH:mm:ss")},{Name},{Email},{Phone},{Message}");
 
             // Check if the file already exists. If not, create it and add headers.
             if (!System.IO.File.Exists(csvFilePath))
             {
-                var csvHeader = "Name,Email,Phone,Message";
+                var csvHeader = "Date,Name,Email,Phone,Message";
                 await System.IO.File.WriteAllTextAsync(csvFilePath, csvHeader + "\n");
             }
 

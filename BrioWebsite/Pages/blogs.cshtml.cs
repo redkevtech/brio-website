@@ -62,7 +62,7 @@ namespace BrioWebsite.Pages
             BlogPosts = BlogPosts.OrderByDescending(b => b.PublishDate).ToList();
 
             // Generate the sitemap
-            GenerateSitemap();
+            //GenerateSitemap();
         }
 
         public void GenerateSitemap()
