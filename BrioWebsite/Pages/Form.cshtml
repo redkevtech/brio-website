@@ -1,0 +1,29 @@
+﻿@page
+@model FormModel
+@{
+    Layout = null;  // You can specify a layout here if required
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Submission</title>
+</head>
+<body>
+    <h2>Form Submission Page</h2>
+
+    <!-- If you want to render something specific when users access this page directly -->
+    @if (Model.IsPostBack)
+    {
+        <div id="form-output">
+            <h3>Submitted Form Data:</h3>
+            <p><strong>Name:</strong> @Model.Name</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Phone:</strong> @Model.Phone</p>
+            <p><strong>Message:</strong> @Model.Message</p>
+        </div>
+    }
+</body>
+</html>
