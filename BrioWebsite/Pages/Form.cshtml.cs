@@ -51,7 +51,7 @@ namespace BrioWebsite.Pages
             }
 
             // Append the new form data to the file
-            await System.IO.File.AppendAllTextAsync(csvFilePath, csvLine.ToString());
+            await System.IO.File.AppendAllTextAsync(csvFilePath, csvLine.ToString().Replace(System.Environment.NewLine, " - ")+'\n');
 
             // Return a success message in JSON format
             var response = new

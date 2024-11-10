@@ -10,8 +10,4 @@
     <None Include="wwwroot\Images\Home\Home.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\Blogs\Images\" />
-  </ItemGroup>
-
 </Project>
